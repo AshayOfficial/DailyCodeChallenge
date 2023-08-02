@@ -35,13 +35,13 @@ public class Que_01_08_23 {
         for (int i = 0; i < deadlineProfitTasks.size(); i++) {
             DeadlineProfitTask deadlineProfitTask = deadlineProfitTasks.get(i);
             if (tasksList[deadlineProfitTask.deadline - 1] == 0) {
-//                tasksList[deadlineProfitTask.deadline - 1] = deadlineProfitTask.tasks;
+                tasksList[deadlineProfitTask.deadline - 1] = deadlineProfitTask.tasks;
                 maxProfit = deadlineProfitTask.profit + maxProfit;
             }
             else if (tasksList[deadlineProfitTask.deadline - 1] != 0) {
                 for (int j = deadlineProfitTask.deadline - 2; j >= 0 ; j--) {
                     if (tasksList[j] == 0) {
-//                        tasksList[j] = deadlineProfitTask.tasks;
+                        tasksList[j] = deadlineProfitTask.tasks;
                         maxProfit = deadlineProfitTask.profit+maxProfit;
                         break;
                     }
