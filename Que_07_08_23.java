@@ -16,7 +16,6 @@ public class Que_07_08_23 {
         }
 
         if (k == 0) {
-            integerArrayCopy = Arrays.stream(integerArrayCopy).sorted().toArray();
             System.out.println(Arrays.toString(integerArrayCopy));
         } else {
 
