@@ -1,3 +1,5 @@
+package practise.dailyQuestionsBySir;
+
 import java.util.Arrays;
 
 public class Que_07_08_23 {

@@ -1,5 +1,6 @@
+package practise.dailyQuestionsBySir;
+
 import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Que_04_08_23 {
 
