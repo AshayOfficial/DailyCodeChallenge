@@ -1,4 +1,4 @@
-package practise.normalQuestions;
+package practise.dailyQuestionsBySir;
 
 import java.util.Arrays;
 

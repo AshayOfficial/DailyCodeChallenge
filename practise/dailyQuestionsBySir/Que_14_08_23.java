@@ -1,6 +1,5 @@
 package practise.dailyQuestionsBySir;
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +18,11 @@ public class Que_14_08_23 {
         which contains all digits from 1 to 9.
     */
     public static void main(String[] args) {
-        int number = 853;
+        int number = 192;
+        if (number < 100) {
+            System.out.println("NOT FASCINATING NUMBER");
+            return;
+        }
         if (fascinatingNo(number)) {
             System.out.println("FASCINATING NUMBER");
         } else {
@@ -28,32 +31,24 @@ public class Que_14_08_23 {
     }
 
     private static boolean fascinatingNo(int number) {
-        int count = 0;
-        int temp = number;
         int mult;
         String finalString;
-        while (number != 0) {
-            number = number / 10;
-            count++;
-        }
-        if (count < 3) {
-            return false;
-        }
-        else {
-            mult = temp * 2;
-            finalString = temp + String.valueOf(mult);
-            mult = temp * 3;
-            finalString = finalString + mult;
-            System.out.println(finalString);
-        }
 
-        int countOfNo = 0;
-        Map<Character, Integer> noFreq = new HashMap<>();
-        for (char i = 0; i < finalString.length(); i++) {
-            if (!noFreq.containsKey(finalString.charAt(i)))
-                noFreq.put(finalString.charAt(i), countOfNo + 1);
-            else return false;
+        mult = number * 2;
+        finalString = number + String.valueOf(mult);
+        mult = number * 3;
+        finalString = finalString + mult;
+        if (finalString.length() < 10) {
+
+            int countOfNo = 0;
+            Map<Character, Integer> noFreq = new HashMap<>();
+            for (char i = 0; i < finalString.length(); i++) {
+                if (!noFreq.containsKey(finalString.charAt(i)))
+                    noFreq.put(finalString.charAt(i), countOfNo + 1);
+                else return false;
+            }
+            return true;
         }
-        return true;
+        else return false;
     }
 }
