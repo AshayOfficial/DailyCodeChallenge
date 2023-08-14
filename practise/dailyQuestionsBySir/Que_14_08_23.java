@@ -19,10 +19,6 @@ public class Que_14_08_23 {
     */
     public static void main(String[] args) {
         int number = 192;
-        if (number < 100) {
-            System.out.println("NOT FASCINATING NUMBER");
-            return;
-        }
         if (fascinatingNo(number)) {
             System.out.println("FASCINATING NUMBER");
         } else {
@@ -31,6 +27,9 @@ public class Que_14_08_23 {
     }
 
     private static boolean fascinatingNo(int number) {
+        if (number < 100) {
+            return false;
+        }
         int mult;
         String finalString;
 
