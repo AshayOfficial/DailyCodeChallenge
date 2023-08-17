@@ -1,4 +1,4 @@
-package practise.normalQuestions;
+package practise.normalQuestions.arraysProblems;
 
 import java.util.HashSet;
 import java.util.Set;

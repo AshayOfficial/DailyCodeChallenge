@@ -1,4 +1,4 @@
-package practise.algos.arraysProblems;
+package practise.normalQuestions.arraysProblems;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package practise.normalQuestions;
+package practise.normalQuestions.integerQuestions;
 
 public class Palindrome {
     public static boolean isPalindrome(int x) {

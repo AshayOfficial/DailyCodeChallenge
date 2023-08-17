@@ -1,4 +1,4 @@
-package practise.normalQuestions;
+package practise.normalQuestions.arraysProblems;
 
 public class DuplicateInArray {
 //    ---------------------------------------REMAINING---------------------------------------------

@@ -1,4 +1,4 @@
-package practise.normalQuestions;
+package practise.normalQuestions.stringProblems;
 
 import java.util.ArrayList;
 import java.util.List;
