@@ -11,10 +11,9 @@ public class Que_28_08_23 {
 
     public static Boolean isPangram(String sentence) {
         String stringReplaced = sentence.replaceAll(" ", "");
-        if (!stringReplaced.isEmpty()) {
-            HashSet<Object> collect = Arrays.stream(stringReplaced.chars().toArray()).collect(HashSet::new, HashSet::add, HashSet::addAll);
-            return collect.size() == 26;
-        }
+        if (!stringReplaced.isEmpty())
+            return Arrays.stream(stringReplaced.chars().toArray()).collect(HashSet::new, HashSet::add, HashSet::addAll).size() == 26;
+
         return false;
     }
 }
