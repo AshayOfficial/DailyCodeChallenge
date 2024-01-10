@@ -1,4 +1,4 @@
-package practise.algos.binarySearch;
+package practise.algos.search.binarySearch;
 
 public class BinSearchAlgo {
     public static void main(String[] args) {
