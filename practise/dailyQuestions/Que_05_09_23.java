@@ -15,11 +15,11 @@ public class Que_05_09_23 {
     Output: 9
     */
     public static void main(String[] args) {
-        int[] height = {4,2,0,3,2,5,4,5};
-        waterTrapped(height);
+        int[] height = {4, 2, 3};
+        trap(height);
     }
 
-    private static void waterTrapped(int[] height) {
+    private static int trap(int[] height) {
         int i = 0;
         int j = 1;
         int waterTrap = 0;
@@ -29,10 +29,8 @@ public class Que_05_09_23 {
 
         // calculating water trapped till max value of array
         while (j < height.length) {
-            if (height[i] == max)
-                break;
-            if (height[i] > height[j])
-                j++;
+            if (height[i] == max) break;
+            if (height[i] > height[j]) j++;
             else if (height[j] >= height[i]) {
                 waterTrap = waterTrapCalculator(waterTrap, height, i, j);
                 i = j;
@@ -48,15 +46,12 @@ public class Que_05_09_23 {
             while (j < height.length) {
                 if (height[j] != max) {
                     j++;
-                }
-                else if (height[j] == max) {
+                } else if (height[j] == max) {
                     // {0,1,0,2,1,0,1,3,0,2,1,2,1}
                     waterTrap = waterTrapCalculator(waterTrap, height, j, i);
                     i = j;
                     j = j + 1;
-                }
-                else if (height[i] > height[j])
-                    j++;
+                } else if (height[i] > height[j]) j++;
                 else if (height[j] >= height[i]) {
                     waterTrap = waterTrapCalculator(waterTrap, height, j, i);
                     i = j;
@@ -64,7 +59,7 @@ public class Que_05_09_23 {
                 }
             }
         }
-        System.out.println(waterTrap);
+        return waterTrap;
     }
 
     private static int waterTrapCalculator(int waterTrap, int[] height, int j, int i) {
@@ -86,13 +81,11 @@ public class Que_05_09_23 {
         int max = Integer.MIN_VALUE;
         if (i == 0) {
             for (int value : height) {
-                if (value > max)
-                    max = value;
+                if (value > max) max = value;
             }
         } else {
             for (int l = i + 1; l < height.length; l++) {
-                if (height[l] > max)
-                    max = height[l];
+                if (height[l] > max) max = height[l];
             }
         }
         return max;
