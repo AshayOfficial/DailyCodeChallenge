@@ -1,4 +1,4 @@
-package practise.algos.sort.quickSort;// Java implementation of QuickSort
+package practise.algos.sort;// Java implementation of QuickSort
 
 /*
 

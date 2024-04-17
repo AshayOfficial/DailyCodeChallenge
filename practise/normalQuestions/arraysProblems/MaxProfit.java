@@ -2,6 +2,7 @@ package practise.normalQuestions.arraysProblems;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class MaxProfit {
     /*
@@ -27,25 +28,19 @@ Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
 */
     public static void main(String[] args) {
-        int[] prices = {7, 6, 4, 3, 1};
+        int[] prices = {1,2};
         System.out.println(maxProfit(prices));
     }
 
     public static int maxProfit(int[] prices) {
-        boolean buy = false;
-        boolean sell = false;
-        int max_profit = 0;
-        Set<Integer> maxProfitSet = new HashSet<>();
+        TreeSet<Integer> profitSet = new TreeSet<>();
         for (int i = 0; i < prices.length; i++) {
-            for (int j = i + 1; j < prices.length; j++) {
-
+            for (int j = i; j < prices.length; j++) {
+                if (prices[i] < prices[j]) {
+                    profitSet.add(prices[j] - prices[i]);
+                }
             }
         }
-
-        for (Integer profit : maxProfitSet) {
-            if (max_profit < profit)
-                max_profit = profit;
-        }
-        return max_profit;
+        return profitSet.pollLast() != null ? profitSet.pollLast() : 0;
     }
 }

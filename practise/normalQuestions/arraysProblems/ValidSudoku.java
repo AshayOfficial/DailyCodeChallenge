@@ -24,36 +24,43 @@ Output: true
 public class ValidSudoku {
     public static void main(String[] args) {
         char[][] board = {
-                {'5' , '3' , '.' , '.' , '7' , '.' , '.' , '.' , '.'}
-                , {'6' , '.' , '.' , '1' , '9' , '5' , '.' , '.' , '.'}
-                , {'.' , '9' , '8' , '.' , '.' , '.' , '.' , '6' , '.'}
-                , {'8' , '.' , '.' , '.' , '6' , '.' , '.' , '.' , '3'}
-                , {'4' , '.' , '.' , '8' , '.' , '3' , '.' , '.' , '1'}
-                , {'7' , '.' , '.' , '.' , '2' , '.' , '.' , '.' , '6'}
-                , {'.' , '6' , '.' , '.' , '.' , '.' , '2' , '8' , '.'}
-                , {'.' , '.' , '.' , '4' , '1' , '9' , '.' , '.' , '5'}
-                , {'.' , '.' , '.' , '.' , '8' , '.' , '.' , '7' , '9'}
+                {'5' , '3' , '.' , '.' , '7' , '.' , '.' , '.' , '.'},
+                {'6' , '.' , '.' , '1' , '9' , '5' , '.' , '.' , '.'},
+                {'.' , '9' , '8' , '.' , '.' , '.' , '.' , '6' , '.'},
+                {'8' , '.' , '.' , '.' , '6' , '.' , '.' , '.' , '3'},
+                {'4' , '.' , '.' , '8' , '.' , '3' , '.' , '.' , '1'},
+                {'7' , '.' , '.' , '.' , '2' , '.' , '.' , '.' , '6'},
+                {'.' , '6' , '.' , '.' , '.' , '.' , '2' , '8' , '.'},
+                {'.' , '.' , '.' , '4' , '1' , '9' , '.' , '.' , '5'},
+                {'.' , '.' , '.' , '.' , '8' , '.' , '.' , '7' , '9'}
         };
         System.out.println(isValidSudoku(board));
     }
 
     public static boolean isValidSudoku(char[][] board) {
-        int i = 0, j = 0;
-        Set<Character> validator = new HashSet<>();
         boolean valid;
-        valid = rowValidator(i, j, board, new HashSet<>(9));
-        valid = colValidator(i, j, board, new HashSet<>(9));
-        valid = gridValidator(i, j, board, new HashSet<>(9));
+        valid = rowValidator(0, 0, board, new HashSet<>(9));
+        valid = colValidator(0, 0, board, new HashSet<>(9));
+        valid = gridValidator(0, 0, board, new HashSet<>(9));
         return valid;
     }
 
     private static boolean gridValidator(int i, int j, char[][] board, HashSet<Object> validator) {
+        boolean valid = false;
+        while (i < board.length && j <= board.length - 3) {
+            for (j = 0; j < 3; j++) {
+                if (board[i][j] != '.')
+                    valid = validator.add(board[i][j]);
+                if (!valid) return false;
+            }
 
-        return true;
+
+        }
+        return valid;
     }
 
     private static boolean colValidator(int i, int j, char[][] board, HashSet<Object> validator) {
-        boolean valid;
+        boolean valid = false;
         // validating column
         while (j < board.length) {
             if (i <= board[j].length) {
@@ -70,11 +77,11 @@ public class ValidSudoku {
                 i++;
             }
         }
-        return true;
+        return valid;
     }
 
     static boolean rowValidator(int i, int j, char[][] board, Set<Character> validator) {
-        boolean valid;
+        boolean valid = false;
         while (i < board.length) {
             // validating row
             if (j <= board[i].length) {
@@ -91,6 +98,6 @@ public class ValidSudoku {
                 j++;
             }
         }
-        return true;
+        return valid;
     }
 }

@@ -25,25 +25,37 @@ public class MedianOf2SortedArrays {
 
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int[] merge = new int[nums1.length + nums2.length];
-        int i = 0, j = 0, k = 0;
-        while (j < nums2.length && i < nums1.length) {
-            if (nums1[i] > nums2[j]) {
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                merge[k] = nums1[i];
+                i++;
+            } else if (nums1[i] > nums2[j]) {
+                merge[k] = nums2[j];
+                j++;
+            } else {
+                merge[k] = nums1[i];
+                i++;
+            }
+            k++;
+        }
+        if (j == nums2.length) {
+            while (i < nums1.length) {
+                merge[k] = nums1[i];
+                i++;
+                k++;
+            }
+        } else {
+            while (j < nums2.length) {
                 merge[k] = nums2[j];
                 k++;
                 j++;
             }
-            else if (nums1[i] < nums2[j]) {
-                merge[k] = nums1[i];
-                k++;
-                i++;
-            }
-            else {
-                merge[k] = nums1[i];
-                k++;
-                i++;
-            }
         }
         System.out.println(Arrays.toString(merge));
-        return 0.00;
+        int ele = merge.length / 2;
+        return merge.length % 2 != 0 ? merge[ele] : (merge[ele] + merge[ele - 1]) / 2.0;
     }
 }

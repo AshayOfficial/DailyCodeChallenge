@@ -6,7 +6,7 @@ package practise.recursion;
  * This is mandatory that we have to provide the <b>Base-Condition</b> which helps to terminate the recursive
  * function calls or else it wil throw the Stack Overflow error.*/
 
-public class RecursionBasic {
+public class RecursionBasicTheory {
     public static void main(String[] args) {
         recursiveFunctionWithoutBaseCondition(1);
 //        recursiveFunctionWithBaseCondition(1);

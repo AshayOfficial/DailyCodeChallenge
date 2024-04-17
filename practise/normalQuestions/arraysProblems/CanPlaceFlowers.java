@@ -1,7 +1,5 @@
 package practise.normalQuestions.arraysProblems;
 
-import com.sun.source.tree.IfTree;
-
 public class CanPlaceFlowers {
     /*
     You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot
@@ -65,7 +63,11 @@ public class CanPlaceFlowers {
         return false;
     }
 
-    public static int maximalNetworkRank(int n, int[][] roads) {
-        return roads.length-1;
+    public static int canPlaceFlowers2(int[] flowerbed, int n) {
+        int i = 0, j = 0;
+        while (i < flowerbed.length) {
+
+        }
+        return 0;
     }
 }
