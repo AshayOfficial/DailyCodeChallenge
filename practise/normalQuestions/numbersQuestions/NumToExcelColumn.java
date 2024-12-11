@@ -1,4 +1,4 @@
-package practise.normalQuestions.integerQuestions;
+package practise.normalQuestions.numbersQuestions;
 
 public class NumToExcelColumn {
     public static void main(String[] args) {

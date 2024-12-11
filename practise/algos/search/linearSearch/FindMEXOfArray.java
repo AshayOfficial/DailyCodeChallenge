@@ -1,8 +1,6 @@
 package practise.algos.search.linearSearch;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 /*
 You are given an integer array of length n. You have to find MEX of ith element for all (1 < i < N).
@@ -12,29 +10,27 @@ index.
 Sample Input ---------- Sample Output
 5
 1 0 5 5 3    ---------- 0 2 2 2 2
+5 3 2 9 8    ---------- 0 0 0 0 0
+1 2 3 4 5    ---------- 0 2 3 4 5
+0 1 2 3 4    ---------- 1 2 3 4 5
+
+Constraints :
+array length n -> 1 < n < 2 * 10^5
+arr[i] -> 0 < n < 2 * 10^5
 */
 public class FindMEXOfArray {
     public static void main(String[] args) {
-        int[] array = {1, 0, 5, 5, 3};
+        int[] array = {1, 0, 5, 5,  3};
         System.out.println(Arrays.toString(mexOfArrayElements(array)));
     }
 
     private static int[] mexOfArrayElements(int[] array) {
         int mex = 0;
-        Set<Integer> mexSet = new HashSet<>();
-        int[] mexArray = new int[array.length];
         for (int i = 0; i < array.length; i++) {
-            mexSet.add(array[i]);
-            if (array[i] != mex) {
-                if (!mexSet.contains(mex)) {
-                    mexArray[i] = mex;
-                }
-                else {
+            for (int j = 0; j < i; j++) {
+                if (array[i] < mex) {
 
                 }
-            } else if (array[i] == mex) {
-                mex += 1;
-                mexArray[i] = mex;
             }
         }
         return null;

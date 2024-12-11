@@ -1,4 +1,4 @@
-package practise.normalQuestions.integerQuestions;
+package practise.normalQuestions.numbersQuestions;
 
 public class ClimbStairs {
     /*
